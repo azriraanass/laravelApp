@@ -25,7 +25,7 @@ use Illuminate\Contracts\View\View;
         {
             return view('Pages.oneProduit',
                             [
-                                'oneProduit' => array_values($this->produitsService->findOne($idProduit)),
+                                'oneProduit' => $this->produitsService->findOne($idProduit),
                             ]);
         }   
 

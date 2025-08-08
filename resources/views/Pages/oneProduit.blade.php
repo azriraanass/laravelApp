@@ -6,7 +6,7 @@
             <p class="text-start fw-bold my-5">
                 Produit :
             </p>
-            {{ implode(' ',$oneProduit[0]) }}
+            {{ $oneProduit->name . " " . $oneProduit->price . " " . $oneProduit->description }}
         </div>
     </div>
 </div>

@@ -29,7 +29,8 @@
             <div class="collapse navbar-collapse justify-content-start" id="main-dev">
                 <ul class="navbar-nav">
                     <x-link routeName="home" >Home</x-link>
-                    <x-link routeName="produits" >Produits</x-link>
+                    <x-link routeName="produits.index" >Produits</x-link>
+                    <x-link routeName="companies.index" >Companies</x-link>
                     <x-link routeName='about' >About</x-link>
                     <x-link routeName='services' >Services</x-link>
                     <x-link routeName='contact' >Contact</x-link>

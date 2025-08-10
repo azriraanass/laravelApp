@@ -2,9 +2,7 @@
 
     namespace App\Services;
 
-    use Illuminate\Database\Eloquent\Collection;
     use App\Models\Produit;
-
 
     class ProduitsService
     {
@@ -16,17 +14,24 @@
             //
         }
 
-        public function all() : Collection
+        public function allProduits() 
         {
-            return Produit::all();
+            $allProduits = Produit::with('company')->cursorPaginate(8);
+            return $allProduits;
         }
 
-        public function findOne(int $idProduit) : Produit
+        public function findOneProduit(int $idProduit) : Produit
         {
             $oneProduit = Produit::find($idProduit);
             if($oneProduit === null)
                 abort(404);
             return $oneProduit;
         }
+
+        public function createProduit(array $newProduit) : void 
+        {
+            Produit::create($newProduit);
+        }
+
 
     }

@@ -1,19 +1,19 @@
 <?php
 
-    namespace Database\Seeders;
+namespace Database\Seeders;
 
-    use App\Models\Produit;
-    use App\Models\Company;
-    use Illuminate\Database\Seeder;
+use App\Models;
+use Illuminate\Database\Seeder;
 
-    class DatabaseSeeder extends Seeder
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
     {
-        /**
-         * Seed the application's database.
-         */
-        public function run(): void
-        {
-            Produit::factory(20)->create();
-            Company::factory(20)->create();
-        }
+        Models\Produit::factory(10)->create();
+        Models\Company::factory(5)->create();
+        Models\User::factory(5)->create();
     }
+}

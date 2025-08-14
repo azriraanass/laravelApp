@@ -6,17 +6,19 @@
             <p class="text-muted lead display-3 mb-0">
                 Companies
             </p>
-            <a href="{{ route('companies.create') }}" class="btn btn-primary">
-                <span class="fw-bold">
+            @auth
+                <a href="{{ route('companies.create') }}" class="btn btn-primary">
+                    <span class="fw-bold">
                     Create Company
-                </span>
-            </a>
+                    </span>
+                </a>
+            @endauth
         </div>
     </div>
     <div class="row my-5">
         <div class="col-12 justify-content-start">
             @foreach ($Companies as $Company)
-                <div class="list-group rounded">            
+                <div class="list-group rounded">
                     <a href="{{ route('companies.index') . '/' . $Company->id }}" class="my-2 list-group-item list-group-item-action text-primary">
                         <span class="fw-bold text-muted">
                             Name :
@@ -36,5 +38,5 @@
         </div>
         {{ $Companies->links() }}
     </div>
-</div> 
+</div>
 @endsection

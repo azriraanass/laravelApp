@@ -36,6 +36,20 @@
                     <x-link routeName='contact' >Contact</x-link>
                 </ul>
             </div>
+            @guest
+                <div class="d-flex justify-content-end mt-3">
+                    <p><a class="link-offset-2 me-2 link-secondary link-underline link-underline-opacity-0" href="/login/create">Login</a></p>
+                    <p><a class="link-offset-2 link-secondary ms-2 link-underline link-underline-opacity-0" href="/register/create">Register</a></p>
+                </div>
+            @endguest
+            @auth
+                <div class="d-flex justify-content-end mt-3 me-5">
+                    <form method="POST" action="/login/logout">
+                        @csrf
+                        <button class="btn btn-link text-muted text-decoration-none" href="/login/logout">Logout</button>
+                    </form>
+                </div>
+            @endauth
         </div>
     </nav>
 
